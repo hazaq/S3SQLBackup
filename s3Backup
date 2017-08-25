@@ -5,10 +5,10 @@
 
 $global:logLocation = "C:\Scripts\backup.log"
 $backupDir = "C:\DailyBackups"
-$serverName = "hris-prod-db1"
-$bucket = "hris-sql-backup"
-$s3Prefix = "hris-prod-db-1"
-$s3StorageClass = "STANDARD_IA"
+$serverName = "example-db-server"
+$bucket = "example backup"
+$s3Prefix = "S3 prefix"
+$s3StorageClass = "STANDARD_IA"    #Valid choices are: STANDARD | REDUCED_REDUNDANCY | STANDARD_IA
 
 function checkSQLBackupJob($sName)
 {
