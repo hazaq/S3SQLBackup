@@ -13,8 +13,8 @@ $s3StorageClass = "STANDARD_IA" #Valid choices are: STANDARD | REDUCED_REDUNDANC
 function checkSQLBackupJob($sName)
 {
     [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.Smo")
-	$srv= NEW-OBJECT ('MICROSOFT.SQLSERVER.MANAGEMENT.SMO.SERVER') $sName
-	$backup = $srv.jobserver.jobs| where-object {$_.name -like "DailyBackups.Subplan_1"} 	
+    $srv= NEW-OBJECT ('MICROSOFT.SQLSERVER.MANAGEMENT.SMO.SERVER') $sName
+    $backup = $srv.jobserver.jobs| where-object {$_.name -like "DailyBackups.Subplan_1"} 	
     $status = $backup.CurrentRunStatus
     return $status
 }
