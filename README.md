@@ -28,7 +28,7 @@ $s3StorageClass = "STANDARD_IA" #Valid choices are: STANDARD | REDUCED_REDUNDANC
                 "s3:ListAllMyBuckets",  
                 "s3:GetBucketLocation"  
             ],  
-            "Resource": "arn:aws:s3:::*"  
+            "Resource": "arn:aws:s3:::\*"  
         },  
         {  
             "Effect": "Allow",  
