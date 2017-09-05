@@ -18,6 +18,7 @@ $backupJob = "DailyBackups.Subplan_1" #Backup Job name that is defined in SQL Ag
 $s3StorageClass = "STANDARD_IA" #Valid choices are: STANDARD | REDUCED_REDUNDANCY | STANDARD_IA
 
 #Example IAM Policy for the User/Role
+
 {
     "Version": "2012-10-17",
     "Statement": [
