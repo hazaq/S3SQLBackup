@@ -10,8 +10,7 @@ on the bucket as you want.
 ## Configuration
 Following parameters needs to configured on the script
 
-$global:logLocation = "C:\Scripts\backup.log" #Location of the log file.
-
+$global:logLocation = "C:\Scripts\backup.log" #Location of the log file.  
 $backupDir = "C:\DailyBackups" #Location of local Backup
  
  
