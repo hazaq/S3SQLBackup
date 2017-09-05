@@ -21,32 +21,32 @@ $s3StorageClass = "STANDARD_IA" #Valid choices are: STANDARD | REDUCED_REDUNDANC
  
 ## Example IAM Policy for the User/Role
 
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "arn:aws:s3:::*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::BucketName"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:PutObject",
-                "s3:GetObject",
-                "s3:DeleteObject"
-            ],
-            "Resource": "arn:aws:s3:::BucketName/*"
-        }
-    ]
-}
+{  
+    "Version": "2012-10-17",  
+    "Statement": [  
+        {  
+            "Effect": "Allow",  
+            "Action": [  
+                "s3:ListAllMyBuckets",  
+                "s3:GetBucketLocation"  
+            ],  
+            "Resource": "arn:aws:s3:::*"  
+        },  
+        {  
+            "Effect": "Allow",  
+            "Action": [  
+                "s3:ListBucket"  
+            ],  
+            "Resource": "arn:aws:s3:::BucketName"  
+        },  
+        {  
+            "Effect": "Allow",  
+            "Action": [  
+                "s3:PutObject",  
+                "s3:GetObject",  
+                "s3:DeleteObject"  
+            ],  
+            "Resource": "arn:aws:s3:::BucketName/*"  
+        }  
+    ]  
+}  
