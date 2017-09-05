@@ -2,18 +2,18 @@
 It is a simple script to copy SQL backups to S3, the script is intelligent enough to see whether the backup is running or not. 
 If the SQL agent backup is running the script will not run and log the error in log location. If the SQL agent backup is not running then the script will create a prefix in the S3 bucket with the following formate ddMMyyyy and copy the backup in to the directory. 
 
-# Pre-requisites
+## Pre-requisites
 On the SQL machine the AWSCLI needs to be installed and configured with a User/Role that have enough permission on the S3 bucket 
 to ‘PutObject’ , ‘GetObject’ and ‘DeleteObject’. On the aws side create the bucket and don’t forget to place a lifecycle policy 
 on the bucket as you want.
 
-# Configuration
+## Configuration
 Following parameters needs to configured on the script
 
-$global:logLocation = "C:\Scripts\backup.log" #Location of the log file
+$global:logLocation = "C:\Scripts\backup.log" #Location of the log file <Enter>
 $backupDir = "C:\DailyBackups" #Location of local Backup
 
-#Example IAM Policy for the User/Role
+## Example IAM Policy for the User/Role
 
 {
     "Version": "2012-10-17",
