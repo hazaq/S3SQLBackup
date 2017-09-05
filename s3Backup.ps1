@@ -8,13 +8,14 @@ $backupDir = "C:\DailyBackups"
 $serverName = "db-server-name"
 $bucket = "example-bucket"
 $s3Prefix = "s3 prefix"
+$backupJob = "DailyBackups.Subplan_1"
 $s3StorageClass = "STANDARD_IA" #Valid choices are: STANDARD | REDUCED_REDUNDANCY | STANDARD_IA
 
 function checkSQLBackupJob($sName)
 {
     [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.Smo")
     $srv= NEW-OBJECT ('MICROSOFT.SQLSERVER.MANAGEMENT.SMO.SERVER') $sName
-    $backup = $srv.jobserver.jobs| where-object {$_.name -like "DailyBackups.Subplan_1"} 	
+    $backup = $srv.jobserver.jobs| where-object {$_.name -like $backupJob} 	
     $status = $backup.CurrentRunStatus
     return $status
 }
