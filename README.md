@@ -1,10 +1,10 @@
 # S3SQLBackup
-It is a simple script to copy SQL backups to S3, the script is intelligent enough to see whether the backup is running or not. 
-If the SQL agent backup is running the script will not run and log the error in log location. If the SQL agent backup is not running then the script will create a prefix in the S3 bucket with the following formate ddMMyyyy and copy the backup in to the directory. 
+It is a simple script to copy MS SQL backups to S3, the script is intelligent enough to see whether the backup is running or not. 
+If the SQL agent backup is running the script will not run and log the error in log location. If the SQL agent backup is not running then the script will create a prefix in the S3 bucket with the following format ddMMyyyy and copy the backup in to the directory, so you will have a new copy of the backup everyday. The script will not delete old backups that you need to do with S3 lifecycle policy.  
 
 ## Pre-requisites
 On the SQL machine the AWSCLI needs to be installed and configured with a User/Role that have enough permission on the S3 bucket 
-to ‘PutObject’ , ‘GetObject’ and ‘DeleteObject’. On the aws side create the bucket and don’t forget to place a lifecycle policy 
+to ‘PutObject’ , ‘GetObject’ and ‘DeleteObject'. Also you need to schedule the script to run with Windows Task Scheduler. On the aws side create the bucket and don’t forget to place a lifecycle policy 
 on the bucket as you want.
 
 ## Configuration
